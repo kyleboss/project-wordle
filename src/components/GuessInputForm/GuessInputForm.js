@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from "react";
 
 import Keyboard from "../Keyboard";
 
-function GuessInputForm({ disabled, letterStatuses, onAddGuess, onNewGame }) {
+function GuessInputForm({ disabled, letterStatuses, onAddGuess }) {
   const [currentGuess, setCurrentGuess] = useState("");
 
   const handleChange = useCallback((event) => {
@@ -36,11 +36,6 @@ function GuessInputForm({ disabled, letterStatuses, onAddGuess, onNewGame }) {
     [currentGuess, onAddGuess]
   );
 
-  const handleNewGame = useCallback(() => {
-    setCurrentGuess("");
-    onNewGame();
-  }, [onNewGame]);
-
   return (
     <form className="guess-input-wrapper" onSubmit={handleSubmit}>
       <Keyboard
@@ -63,9 +58,6 @@ function GuessInputForm({ disabled, letterStatuses, onAddGuess, onNewGame }) {
       />
       <button disabled={disabled} type="submit">
         Guess
-      </button>
-      <button onClick={handleNewGame} type="button">
-        New game
       </button>
     </form>
   );

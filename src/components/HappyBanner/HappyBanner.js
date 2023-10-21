@@ -2,9 +2,9 @@ import React from "react";
 import { GAME_STATE_WON } from "../../constants";
 import Banner from "../Banner";
 
-function HappyBanner({ numGuesses }) {
+function HappyBanner({ onNewGame, numGuesses }) {
   return (
-    <Banner status={GAME_STATE_WON}>
+    <Banner onNewGame={onNewGame} status={GAME_STATE_WON}>
       <h2>You won!</h2>
       <p>
         You got it in{" "}

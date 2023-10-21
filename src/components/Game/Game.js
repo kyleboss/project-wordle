@@ -123,8 +123,12 @@ function Game() {
         onNewGame={handleNewGame}
         disabled={gameOver}
       />
-      {gameWon ? <HappyBanner numGuesses={numGuesses} /> : null}
-      {gameLost ? <SadBanner answer={answer} /> : null}
+      {gameWon ? (
+        <HappyBanner onNewGame={handleNewGame} numGuesses={numGuesses} />
+      ) : null}
+      {gameLost ? (
+        <SadBanner onNewGame={handleNewGame} answer={answer} />
+      ) : null}
     </>
   );
 }
