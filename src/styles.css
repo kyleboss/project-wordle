@@ -230,3 +230,52 @@ h1 {
     transform: translateY(0%);
   }
 }
+
+.keyboard {
+  padding: 16px;
+  background: var(--color-gray-900);
+  color: var(--color-gray-300);
+  font-size: 1.5rem;
+  gap: 8px;
+  z-index: 1;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 8px;
+}
+
+.keyboard-key {
+  display: grid;
+  place-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--color-gray-700);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.keyboard-key.correct {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+
+.keyboard-key.incorrect {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+  color: white;
+}
+
+.keyboard-key.misplaced {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+}
+
+.keyboard-key:disabled {
+  background: var(--color-gray-700);
+  border-color: var(--color-gray-700);
+  color: var(--color-gray-900);
+  cursor: not-allowed;
+}
